@@ -343,11 +343,25 @@ img {
     gap: 2rem;
 }
 
-.home-content h1 {
+.home-content .title {
     font-size: var(--h1-size);
     margin-bottom: 1rem;
     font-weight: 800;
     line-height: 1.1;
+    background: linear-gradient(90deg, #ffffff 0%, #cbd5e1 20%, #06b6d4 60%, #8b5cf6 100%);
+    background-size: 200% auto;
+    background-position: 0% 50%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    transition: background-position 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.3s ease;
+}
+
+.home-content .title:hover {
+    background-position: 100% 50%;
+    transform: scale(1.02);
+    cursor: default;
 }
 
 .subtitle {
@@ -528,6 +542,16 @@ img {
 @keyframes spinLeft {
     100% {
         transform: translate(-50%, -50%) rotate(-360deg);
+    }
+}
+
+@keyframes spinGlobe {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
     }
 }
 
