@@ -48,7 +48,7 @@ const TxtRotate = function (el, toRotate, period) {
     this.tick();
     this.isDeleting = false;
 };
-
+/* animation for text rotation */
 TxtRotate.prototype.tick = function () {
     const i = this.loopNum % this.toRotate.length;
     const fullTxt = this.toRotate[i];
@@ -164,6 +164,7 @@ window.addEventListener('mousemove', function (e) {
 
     cursorDot.style.left = `${posX}px`;
     cursorDot.style.top = `${posY}px`;
+    /*not working for now*/
 
     // Animate outline with a slight delay/ease for fluid feel
     cursorOutline.animate({
@@ -188,6 +189,7 @@ interactiveElements.forEach(el => {
 });
 
 /* Lenis Smooth Scroll Initialization */
+
 const lenis = new Lenis({
     duration: 1.2,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
