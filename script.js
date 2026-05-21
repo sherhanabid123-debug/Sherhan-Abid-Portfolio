@@ -34,7 +34,7 @@ function scrollActive() {
         } else {
             document.querySelector('.nav-link[href*=' + sectionId + ']').classList.remove('active');
         }
-    }); /* do not remove this */ q
+    }); /* do not remove this */ 
 }
 window.addEventListener('scroll', scrollActive);
 
@@ -148,45 +148,43 @@ const observer = new IntersectionObserver((entries) => {
         }
     });
 }, observerOptions);
-
-section.classList.add('fade-in');
-observer.observe(section);
+const scrollRevealElements = document.querySelectorAll('section, .service-card, .project-card, .skills-category');
+scrollRevealElements.forEach(el => {
+    el.classList.add('fade-in');
+    observer.observe(el);
 });
 
-/* Custom Cursor Logic */
-const cursorDot = document.querySelector('[data-cursor-dot]');
-const cursorOutline = document.querySelector('[data-cursor-outline]');
-const interactiveElements = document.querySelectorAll('a, button, .nav-toggle, .contact-box, .project-card, .blog-card');
+if (cursorDot && cursorOutline) {
+    window.addEventListener('mousemove', function (e) {
+        const posX = e.clientX;
+        const posY = e.clientY;
 
-window.addEventListener('mousemove', function (e) {
-    const posX = e.clientX;
-    const posY = e.clientY;
+        cursorDot.style.left = `${posX}px`;
+        cursorDot.style.top = `${posY}px`;
+        /*not working for now*/
 
-    cursorDot.style.left = `${posX}px`;
-    cursorDot.style.top = `${posY}px`;
-    /*not working for now*/
-
-    // Animate outline with a slight delay/ease for fluid feel
-    cursorOutline.animate({
-        left: `${posX}px`,
-        top: `${posY}px`
-    }, { duration: 500, fill: "forwards" });
-});
-
-// Hover Effect
-interactiveElements.forEach(el => {
-    el.addEventListener('mouseenter', () => {
-        cursorOutline.style.transform = 'translate(-50%, -50%) scale(1.5)';
-        cursorOutline.style.backgroundColor = 'rgba(56, 189, 248, 0.1)';
-        cursorOutline.style.borderColor = 'transparent';
+        // Animate outline with a slight delay/ease for fluid feel
+        cursorOutline.animate({
+            left: `${posX}px`,
+            top: `${posY}px`
+        }, { duration: 500, fill: "forwards" });
     });
 
-    el.addEventListener('mouseleave', () => {
-        cursorOutline.style.transform = 'translate(-50%, -50%) scale(1)';
-        cursorOutline.style.backgroundColor = 'transparent';
-        cursorOutline.style.borderColor = 'var(--text-accent)';
+    // Hover Effect
+    interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            cursorOutline.style.transform = 'translate(-50%, -50%) scale(1.5)';
+            cursorOutline.style.backgroundColor = 'rgba(56, 189, 248, 0.1)';
+            cursorOutline.style.borderColor = 'transparent';
+        });
+
+        el.addEventListener('mouseleave', () => {
+            cursorOutline.style.transform = 'translate(-50%, -50%) scale(1)';
+            cursorOutline.style.backgroundColor = 'transparent';
+            cursorOutline.style.borderColor = 'var(--text-accent)';
+        });
     });
-});
+}
 
 /* Lenis Smooth Scroll Initialization */
 
