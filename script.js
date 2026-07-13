@@ -154,38 +154,6 @@ scrollRevealElements.forEach(el => {
     observer.observe(el);
 });
 
-if (cursorDot && cursorOutline) {
-    window.addEventListener('mousemove', function (e) {
-        const posX = e.clientX;
-        const posY = e.clientY;
-
-        cursorDot.style.left = `${posX}px`;
-        cursorDot.style.top = `${posY}px`;
-        /*not working for now*/
-
-        // Animate outline with a slight delay/ease for fluid feel
-        cursorOutline.animate({
-            left: `${posX}px`,
-            top: `${posY}px`
-        }, { duration: 500, fill: "forwards" });
-    });
-
-    // Hover Effect
-    interactiveElements.forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            cursorOutline.style.transform = 'translate(-50%, -50%) scale(1.5)';
-            cursorOutline.style.backgroundColor = 'rgba(56, 189, 248, 0.1)';
-            cursorOutline.style.borderColor = 'transparent';
-        });
-
-        el.addEventListener('mouseleave', () => {
-            cursorOutline.style.transform = 'translate(-50%, -50%) scale(1)';
-            cursorOutline.style.backgroundColor = 'transparent';
-            cursorOutline.style.borderColor = 'var(--text-accent)';
-        });
-    });
-}
-
 /* Lenis Smooth Scroll Initialization */
 
 const lenis = new Lenis({
@@ -205,3 +173,33 @@ function raf(time) {
 }
 
 requestAnimationFrame(raf);
+
+/* Hero Visual Parallax Tilt */
+const heroVisual = document.getElementById('heroVisual');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
+
+if (heroVisual && !prefersReducedMotion && !isTouchDevice) {
+    let targetX = 0, targetY = 0, currentX = 0, currentY = 0;
+
+    heroVisual.addEventListener('mousemove', (e) => {
+        const rect = heroVisual.getBoundingClientRect();
+        const relX = (e.clientX - rect.left) / rect.width - 0.5;
+        const relY = (e.clientY - rect.top) / rect.height - 0.5;
+        targetX = relY * -14;
+        targetY = relX * 14;
+    });
+
+    heroVisual.addEventListener('mouseleave', () => {
+        targetX = 0;
+        targetY = 0;
+    });
+
+    function tiltLoop() {
+        currentX += (targetX - currentX) * 0.08;
+        currentY += (targetY - currentY) * 0.08;
+        heroVisual.style.transform = `rotateX(${currentX}deg) rotateY(${currentY}deg)`;
+        requestAnimationFrame(tiltLoop);
+    }
+    requestAnimationFrame(tiltLoop);
+}

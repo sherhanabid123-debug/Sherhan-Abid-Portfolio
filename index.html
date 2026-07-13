@@ -67,22 +67,32 @@
                 </div>
                 <!-- Image/Animation -->
                 <div class="home-image">
-                    <div class="hero-anim-box">
-                        <!-- Central Core -->
-                        <div class="planet-core">
-                            <i class="fas fa-globe-americas" style="animation: spinGlobe 10s linear infinite;"></i>
-                        </div>
+                    <div class="hero-visual">
+                        <div class="hero-tilt" id="heroVisual">
+                            <div class="glow-orb orb-1"></div>
+                            <div class="glow-orb orb-2"></div>
 
-                        <!-- Inner Orbit (Dev Skills) -->
-                        <div class="orbit orbit-1">
-                            <div class="orbit-icon icon-1"><i class="fas fa-code"></i></div>
-                            <div class="orbit-icon icon-3"><i class="fas fa-mobile-alt"></i></div>
-                        </div>
+                            <div class="code-window">
+                                <div class="code-window-header">
+                                    <span class="win-dot dot-red"></span>
+                                    <span class="win-dot dot-yellow"></span>
+                                    <span class="win-dot dot-green"></span>
+                                    <span class="code-window-title">build.js</span>
+                                </div>
+                                <div class="code-window-body">
+                                    <pre><code><span class="code-line line-1"><span class="tok-kw">const</span> <span class="tok-var">idea</span> = <span class="tok-str">"real problem"</span>;</span>
+<span class="code-line line-2"><span class="tok-kw">async function</span> <span class="tok-fn">build</span>(idea) {</span>
+<span class="code-line line-3">  <span class="tok-kw">const</span> app = <span class="tok-kw">await</span> <span class="tok-fn">ship</span>(idea);</span>
+<span class="code-line line-4">  <span class="tok-kw">return</span> app.<span class="tok-fn">launch</span>();</span>
+<span class="code-line line-5">}</span>
+<span class="code-line line-6 tok-comment">// shipping...</span><span class="code-cursor"></span></code></pre>
+                                </div>
+                            </div>
 
-                        <!-- Outer Orbit (Marketing/Data) -->
-                        <div class="orbit orbit-2">
-                            <div class="orbit-icon icon-2"><i class="fas fa-search"></i></div>
-                            <div class="orbit-icon icon-4"><i class="fas fa-chart-line"></i></div>
+                            <div class="floating-chip chip-1"><i class="fab fa-react"></i></div>
+                            <div class="floating-chip chip-2"><i class="fas fa-robot"></i></div>
+                            <div class="floating-chip chip-3"><i class="fab fa-node-js"></i></div>
+                            <div class="floating-chip chip-4"><i class="fas fa-bolt"></i></div>
                         </div>
                     </div>
                 </div>
