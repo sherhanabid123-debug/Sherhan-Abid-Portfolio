@@ -2,7 +2,7 @@
 
 Personal portfolio site built with plain HTML, CSS, and JavaScript.
 
-**Live site:** [add your deployed URL here]
+**Live site:** [sherhan-abid-portfolio.vercel.app](https://sherhan-abid-portfolio.vercel.app)
 
 ## Features
 
