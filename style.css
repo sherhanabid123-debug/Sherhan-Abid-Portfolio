@@ -750,8 +750,11 @@ img {
     transition: 0.3s;
 }
 
-.skill-item i {
+.skill-item i,
+.skill-item svg {
     font-size: 1.05rem;
+    width: 1rem;
+    height: 1rem;
     transition: transform 0.3s ease;
 }
 
@@ -762,7 +765,8 @@ img {
     transform: translateY(-2px);
 }
 
-.skill-item:hover i {
+.skill-item:hover i,
+.skill-item:hover svg {
     transform: scale(1.15);
 }
 
