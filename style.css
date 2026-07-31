@@ -744,8 +744,15 @@ img {
     color: var(--text-primary);
     font-size: 0.85rem;
     border: 1px solid rgba(255, 255, 255, 0.05);
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     transition: 0.3s;
+}
+
+.skill-item i {
+    font-size: 1.05rem;
+    transition: transform 0.3s ease;
 }
 
 .skill-item:hover {
@@ -753,6 +760,10 @@ img {
     border-color: transparent;
     box-shadow: 0 0 15px var(--glow-color);
     transform: translateY(-2px);
+}
+
+.skill-item:hover i {
+    transform: scale(1.15);
 }
 
 /* Experience */
