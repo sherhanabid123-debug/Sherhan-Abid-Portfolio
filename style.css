@@ -1,30 +1,30 @@
 /* CSS Variables & Reset */
 :root {
-    /* Base Colors - Dark Gray / Monochrome Theme */
-    --bg-color: #0a0a0b;
-    /* Neutral near-black */
-    --surface-color: #18181b;
-    /* Slightly lighter for cards */
-    --surface-hover: #232326;
+    /* Base Colors - Cool Space Slate & Titanium Palette */
+    --bg-color: #0b0f17;
+    /* Deep space slate near-black */
+    --surface-color: #131b2e;
+    /* Rich slate titanium for cards */
+    --surface-hover: #1c2740;
     /* Hover state for cards */
 
     /* Text Colors */
-    --text-primary: #f4f4f5;
-    /* Zinc white for headings */
-    --text-secondary: #9f9fa6;
-    /* Soft gray for body text */
-    --text-accent: #d4d4d8;
-    /* Light silver/gray accent */
+    --text-primary: #f8fafc;
+    /* Crisp titanium white for headings */
+    --text-secondary: #94a3b8;
+    /* Muted slate gray for body text */
+    --text-accent: #cbd5e1;
+    /* Icy platinum silver accent */
 
-    /* Neutral Gray Accents - The "Aura" */
-    --primary-gradient: linear-gradient(135deg, #e4e4e7 0%, #71717a 100%);
-    /* Light to Mid Gray */
-    --secondary-gradient: linear-gradient(135deg, #d4d4d8 0%, #52525b 100%);
-    /* Silver/Gray */
-    --glow-color: rgba(212, 212, 216, 0.35);
-    /* Soft Gray Glow */
-    --purple-glow: rgba(161, 161, 170, 0.25);
-    /* Soft Silver Secondary Glow */
+    /* Slate & Platinum Titanium Accents & Gradients */
+    --primary-gradient: linear-gradient(135deg, #f1f5f9 0%, #94a3b8 50%, #475569 100%);
+    /* Titanium Platinum gradient */
+    --secondary-gradient: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 100%);
+    /* Crisp icy silver gradient */
+    --glow-color: rgba(203, 213, 225, 0.35);
+    /* Soft platinum glow */
+    --purple-glow: rgba(148, 163, 184, 0.25);
+    /* Slate silver secondary glow */
 
     /* Fonts */
     --body-font: 'Montserrat', sans-serif;
@@ -98,17 +98,17 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgba(212, 212, 216, 0.3);
+    background: rgba(203, 213, 225, 0.3);
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(212, 212, 216, 0.5);
+    background: rgba(203, 213, 225, 0.5);
 }
 
 /* Selection Color */
 ::selection {
-    background: rgba(212, 212, 216, 0.3);
+    background: rgba(203, 213, 225, 0.3);
     color: #fff;
 }
 
@@ -134,7 +134,7 @@ body::after {
     right: -10%;
     width: 40vw;
     height: 40vw;
-    background: radial-gradient(circle, rgba(212, 212, 216, 0.15) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(203, 213, 225, 0.15) 0%, transparent 70%);
     filter: blur(60px);
     z-index: -1;
     opacity: 0.5;
@@ -241,7 +241,7 @@ img {
 }
 
 .btn-primary:hover {
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 20px rgba(248, 250, 252, 0.35);
     transform: translateY(-3px);
 }
 
@@ -257,7 +257,7 @@ img {
 .btn-secondary:hover {
     border-color: var(--text-accent);
     color: var(--text-accent);
-    box-shadow: 0 0 15px rgba(212, 212, 216, 0.2);
+    box-shadow: 0 0 15px rgba(203, 213, 225, 0.2);
 }
 
 /* Header / Nav */
@@ -270,7 +270,7 @@ img {
     transition: 0.3s;
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
-    background: rgba(10, 10, 11, 0.75);
+    background: rgba(11, 15, 23, 0.75);
     border-bottom: 1px solid rgba(255, 255, 255, 0.03);
 }
 
@@ -303,7 +303,7 @@ img {
 .logo:hover {
     color: var(--text-accent);
     letter-spacing: 4px;
-    text-shadow: 0 0 20px rgba(212, 212, 216, 0.5);
+    text-shadow: 0 0 20px rgba(203, 213, 225, 0.5);
 }
 
 .logo:hover .logo-dot {
@@ -367,7 +367,7 @@ img {
     margin-bottom: 1rem;
     font-weight: 800;
     line-height: 1.1;
-    background: linear-gradient(90deg, #ffffff 0%, #e4e4e7 20%, #d4d4d8 60%, #71717a 100%);
+    background: linear-gradient(90deg, #ffffff 0%, #f1f5f9 20%, #cbd5e1 60%, #64748b 100%);
     background-size: 200% auto;
     background-position: 0% 50%;
     -webkit-background-clip: text;
@@ -391,10 +391,10 @@ img {
     letter-spacing: 2px;
     text-transform: uppercase;
     font-size: 0.9rem;
-    background: rgba(212, 212, 216, 0.1);
+    background: rgba(203, 213, 225, 0.08);
     padding: 0.5rem 1rem;
     border-radius: 4px;
-    border: 1px solid rgba(212, 212, 216, 0.2);
+    border: 1px solid rgba(203, 213, 225, 0.18);
 }
 
 .role {
@@ -451,7 +451,7 @@ img {
 .image-blob:hover {
     transform: rotate(0);
     border-color: var(--text-accent);
-    box-shadow: 0 0 30px rgba(212, 212, 216, 0.2);
+    box-shadow: 0 0 30px rgba(203, 213, 225, 0.2);
 }
 
 .profile-img {
@@ -489,7 +489,7 @@ img {
     border-radius: 50%;
     background: var(--primary-gradient);
     transform: translate(-50%, -50%);
-    box-shadow: 0 0 60px var(--glow-color), 0 0 120px rgba(212, 212, 216, 0.15);
+    box-shadow: 0 0 60px var(--glow-color), 0 0 120px rgba(203, 213, 225, 0.15);
     animation: breathe 4.5s ease-in-out infinite;
     z-index: 2;
 }
@@ -516,7 +516,7 @@ img {
     height: 240px;
     margin: -120px 0 0 -120px;
     border-radius: 50%;
-    border: 1px dashed rgba(212, 212, 216, 0.25);
+    border: 1px dashed rgba(203, 213, 225, 0.25);
     animation: slowSpin 40s linear infinite;
     z-index: 1;
 }
@@ -608,7 +608,7 @@ img {
 }
 
 .glass-card {
-    background: rgba(24, 24, 27, 0.6);
+    background: rgba(19, 27, 46, 0.6);
     /* More transparent for glass effect */
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -634,9 +634,9 @@ img {
 
 .glass-card:hover {
     transform: translateY(-8px);
-    border-color: rgba(212, 212, 216, 0.3);
-    box-shadow: 0 20px 40px -15px rgba(10, 10, 11, 0.8);
-    background: rgba(35, 35, 38, 0.7);
+    border-color: rgba(203, 213, 225, 0.3);
+    box-shadow: 0 20px 40px -15px rgba(11, 15, 23, 0.8);
+    background: rgba(28, 39, 64, 0.7);
 }
 
 /* About */
@@ -686,7 +686,7 @@ img {
 }
 
 .skills-category {
-    background: rgba(24, 24, 27, 0.6);
+    background: rgba(19, 27, 46, 0.6);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -710,9 +710,9 @@ img {
 
 .skills-category:hover {
     transform: translateY(-6px);
-    border-color: rgba(212, 212, 216, 0.3);
-    box-shadow: 0 20px 40px -15px rgba(10, 10, 11, 0.8);
-    background: rgba(35, 35, 38, 0.7);
+    border-color: rgba(203, 213, 225, 0.3);
+    box-shadow: 0 20px 40px -15px rgba(11, 15, 23, 0.8);
+    background: rgba(28, 39, 64, 0.7);
 }
 
 .skills-category .category-title {
@@ -799,7 +799,7 @@ img {
     top: 0.25rem;
     width: 1rem;
     height: 1rem;
-    background: #0a0a0b;
+    background: #0b0f17;
     border-radius: 50%;
     border: 2px solid var(--text-accent);
     box-shadow: 0 0 10px var(--glow-color);
@@ -870,7 +870,7 @@ img {
     font-size: 2.5rem;
     color: var(--text-accent);
     margin-bottom: 1.5rem;
-    text-shadow: 0 0 20px rgba(212, 212, 216, 0.4);
+    text-shadow: 0 0 20px rgba(203, 213, 225, 0.4);
 }
 
 .contact-box h3 {
@@ -905,7 +905,7 @@ img {
         right: -100%;
         width: 85%;
         height: 100vh;
-        background: rgba(24, 24, 27, 0.95);
+        background: rgba(19, 27, 46, 0.95);
         backdrop-filter: blur(10px);
         flex-direction: column;
         justify-content: center;
@@ -969,8 +969,8 @@ img {
 
 .project-card:hover {
     transform: translateY(-10px);
-    border-color: rgba(212, 212, 216, 0.3);
-    box-shadow: 0 20px 40px -15px rgba(10, 10, 11, 0.8);
+    border-color: rgba(203, 213, 225, 0.3);
+    box-shadow: 0 20px 40px -15px rgba(11, 15, 23, 0.8);
     background: var(--surface-hover);
 }
 
@@ -1000,7 +1000,7 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(10, 10, 11, 0.7);
+    background: rgba(11, 15, 23, 0.7);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1053,20 +1053,20 @@ img {
 }
 
 .project-tag {
-    background: rgba(212, 212, 216, 0.08);
+    background: rgba(203, 213, 225, 0.08);
     color: var(--text-accent);
     padding: 0.3rem 0.8rem;
     border-radius: 50px;
     font-size: 0.8rem;
     font-weight: 500;
-    border: 1px solid rgba(212, 212, 216, 0.15);
+    border: 1px solid rgba(203, 213, 225, 0.15);
     transition: all 0.3s ease;
 }
 
 .project-card:hover .project-tag {
-    background: rgba(212, 212, 216, 0.15);
-    border-color: rgba(212, 212, 216, 0.35);
-    box-shadow: 0 0 10px rgba(212, 212, 216, 0.1);
+    background: rgba(203, 213, 225, 0.15);
+    border-color: rgba(203, 213, 225, 0.35);
+    box-shadow: 0 0 10px rgba(203, 213, 225, 0.1);
 }
 
 /* Blogs Section */
@@ -1247,15 +1247,15 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 50% -20%, rgba(212, 212, 216, 0.1), transparent 70%);
+    background: radial-gradient(circle at 50% -20%, rgba(203, 213, 225, 0.1), transparent 70%);
     opacity: 0;
     transition: 0.4s;
 }
 
 .service-card:hover {
     transform: translateY(-10px);
-    border-color: rgba(212, 212, 216, 0.5);
-    box-shadow: 0 10px 30px -10px rgba(212, 212, 216, 0.3);
+    border-color: rgba(203, 213, 225, 0.5);
+    box-shadow: 0 10px 30px -10px rgba(203, 213, 225, 0.3);
     background: rgba(255, 255, 255, 0.05);
 }
 
@@ -1270,13 +1270,13 @@ img {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 10px rgba(212, 212, 216, 0.4));
+    filter: drop-shadow(0 0 10px rgba(203, 213, 225, 0.4));
     transition: 0.4s;
 }
 
 .service-card:hover .service-icon {
     transform: scale(1.1);
-    filter: drop-shadow(0 0 15px rgba(212, 212, 216, 0.6));
+    filter: drop-shadow(0 0 15px rgba(203, 213, 225, 0.6));
 }
 
 .service-title {
@@ -1385,7 +1385,7 @@ img {
         top: -100%;
         left: 0;
         width: 100%;
-        background-color: rgba(10, 10, 11, 0.95);
+        background-color: rgba(11, 15, 23, 0.95);
         backdrop-filter: blur(10px);
         padding: 4rem 0;
         flex-direction: column;
