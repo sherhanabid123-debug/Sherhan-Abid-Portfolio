@@ -1,30 +1,30 @@
 /* CSS Variables & Reset */
 :root {
-    /* Base Colors - Soft Muted Steel & Slate Blue Palette */
-    --bg-color: #090d16;
-    /* Deep calm midnight navy */
-    --surface-color: #111827;
-    /* Dark slate navy for cards */
-    --surface-hover: #1f2937;
-    /* Hover state for cards */
+    /* Base Colors - Subdued Dark Obsidian Navy Palette */
+    --bg-color: #050811;
+    /* Deep obsidian navy near-black */
+    --surface-color: #0c1220;
+    /* Dark slate for cards */
+    --surface-hover: #162034;
+    /* Muted hover state */
 
     /* Text Colors */
-    --text-primary: #f9fafb;
-    /* Soft white for headings */
-    --text-secondary: #9ca3af;
-    /* Muted gray-slate for body text */
+    --text-primary: #f1f5f9;
+    /* Crisp white for headings */
+    --text-secondary: #8e9bae;
+    /* Soft grayish-slate for body text */
     --text-accent: #60a5fa;
-    /* Soft muted steel blue accent */
+    /* Muted steel blue accent */
 
-    /* Muted Steel & Slate Blue Accents & Gradients */
-    --primary-gradient: linear-gradient(135deg, #93c5fd 0%, #3b82f6 50%, #1e40af 100%);
-    /* Muted steel to soft royal gradient */
+    /* Subtle Dark Accents & Gradients */
+    --primary-gradient: linear-gradient(135deg, #60a5fa 0%, #3b82f6 50%, #1d4ed8 100%);
+    /* Muted Steel to Royal Blue gradient */
     --secondary-gradient: linear-gradient(135deg, #ffffff 0%, #93c5fd 100%);
     /* Soft white to steel blue gradient */
-    --glow-color: rgba(96, 165, 250, 0.22);
-    /* Very soft, non-glaring glow */
-    --purple-glow: rgba(59, 130, 246, 0.15);
-    /* Soft ambient aura */
+    --glow-color: rgba(96, 165, 250, 0.08);
+    /* Ultra-subtle non-glaring glow */
+    --purple-glow: rgba(29, 78, 216, 0.1);
+    /* Deep background ambient aura */
 
     /* Fonts */
     --body-font: 'Montserrat', sans-serif;
@@ -134,7 +134,7 @@ body::after {
     right: -10%;
     width: 40vw;
     height: 40vw;
-    background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.06) 0%, transparent 70%);
     filter: blur(60px);
     z-index: -1;
     opacity: 0.5;
@@ -270,7 +270,7 @@ img {
     transition: 0.3s;
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
-    background: rgba(9, 13, 22, 0.8);
+    background: rgba(5, 8, 17, 0.85);
     border-bottom: 1px solid rgba(255, 255, 255, 0.03);
 }
 
@@ -367,7 +367,7 @@ img {
     margin-bottom: 1rem;
     font-weight: 800;
     line-height: 1.1;
-    background: linear-gradient(90deg, #ffffff 0%, #e0f2fe 25%, #60a5fa 65%, #2563eb 100%);
+    background: linear-gradient(90deg, #ffffff 0%, #cbd5e1 30%, #60a5fa 70%, #3b82f6 100%);
     background-size: 200% auto;
     background-position: 0% 50%;
     -webkit-background-clip: text;
@@ -472,101 +472,190 @@ img {
     perspective: 1000px;
 }
 
-.hero-tilt {
+/* Hero Glass Tech Dashboard Card */
+.hero-dashboard-card {
     position: relative;
     width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    will-change: transform;
+    max-width: 440px;
+    background: rgba(12, 18, 32, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.8), 0 0 20px rgba(96, 165, 250, 0.05);
+    animation: floatDashboard 6s ease-in-out infinite;
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-.core-orb {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    background: var(--primary-gradient);
-    transform: translate(-50%, -50%);
-    box-shadow: 0 0 60px var(--glow-color), 0 0 120px rgba(96, 165, 250, 0.12);
-    animation: breathe 4.5s ease-in-out infinite;
-    z-index: 2;
+.hero-dashboard-card:hover {
+    border-color: rgba(96, 165, 250, 0.25);
+    box-shadow: 0 25px 50px -15px rgba(0, 0, 0, 0.9), 0 0 30px rgba(96, 165, 250, 0.1);
 }
 
-@keyframes breathe {
-
-    0%,
-    100% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 0.92;
+@keyframes floatDashboard {
+    0%, 100% {
+        transform: translateY(0);
     }
-
     50% {
-        transform: translate(-50%, -50%) scale(1.06);
-        opacity: 1;
+        transform: translateY(-8px);
     }
 }
 
-.core-ring {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 240px;
-    height: 240px;
-    margin: -120px 0 0 -120px;
+.dash-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.85rem 1.25rem;
+    background: rgba(5, 8, 17, 0.6);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.dash-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.dash-dot {
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
-    border: 1px dashed rgba(96, 165, 250, 0.2);
-    animation: slowSpin 40s linear infinite;
-    z-index: 1;
 }
 
-@keyframes slowSpin {
-    to {
-        transform: rotate(360deg);
-    }
+.dash-dot.close { background: #ef4444; opacity: 0.8; }
+.dash-dot.minimize { background: #f59e0b; opacity: 0.8; }
+.dash-dot.expand { background: #10b981; opacity: 0.8; }
+
+.dash-title {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    font-family: 'Fira Code', monospace, sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
 }
 
-.orbit-wrap {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+.dash-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #10b981;
+    background: rgba(16, 185, 129, 0.1);
+    padding: 0.2rem 0.6rem;
+    border-radius: 50px;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.live-pulse {
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
-    z-index: 1;
-    animation: slowSpin 16s linear infinite;
+    background: #10b981;
+    box-shadow: 0 0 8px #10b981;
+    animation: livePulse 1.8s ease-in-out infinite;
 }
 
-.orbit-a {
-    width: 320px;
-    height: 320px;
-    margin: -160px 0 0 -160px;
+@keyframes livePulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(1.3); }
 }
 
-.orbit-b {
-    width: 210px;
-    height: 210px;
-    margin: -105px 0 0 -105px;
-    animation-duration: 22s;
-    animation-direction: reverse;
+.dash-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
 }
 
-.orbit-dot {
-    position: absolute;
-    top: -4px;
-    left: 50%;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--text-accent);
-    transform: translateX(-50%);
-    box-shadow: 0 0 12px var(--glow-color);
+.dash-stat-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+}
+
+.dash-stat {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 0.65rem 0.5rem;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.2rem;
+}
+
+.stat-val {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.dash-code-box {
+    background: rgba(5, 8, 17, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    border-radius: 12px;
+    font-family: 'Fira Code', 'Courier New', monospace;
+    font-size: 0.78rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+}
+
+.code-line {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.code-keyword { color: #f472b6; }
+.code-string { color: #34d399; }
+.code-comment { color: #64748b; font-style: italic; }
+.code-fn { color: #60a5fa; }
+
+.code-cursor {
+    display: inline-block;
+    width: 7px;
+    height: 14px;
+    background: #60a5fa;
+    vertical-align: middle;
+    margin-left: 2px;
+    animation: blinkCursor 1s infinite;
+}
+
+@keyframes blinkCursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.dash-tech-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+}
+
+.tech-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 0.3rem 0.75rem;
+    border-radius: 50px;
+}
+
+.tech-pill i {
+    font-size: 0.85rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
-
-    .core-orb,
-    .core-ring,
-    .orbit-wrap {
+    .hero-dashboard-card {
         animation: none !important;
     }
 }
